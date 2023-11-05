@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MEDSECURE</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark">
+        <div class="row py-2 px-lg-5">
+            <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center text-white">
+                    <small><i class="fa fa-phone-alt mr-2"></i>0712415344</small>
+                    <small class="px-3">|</small>
+                    <small><i class="fa fa-envelope mr-2"></i>Medsecure@gmail.com</small>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-white px-2" href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-white px-2" href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-white px-2" href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="text-white px-2" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-white pl-2" href="">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
+            <a href="index.html" class="navbar-brand ml-lg-3">
+                <h1 class="m-0 display-5 text-uppercase text-primary"><i class="fa fa-stethoscope mr-2"></i>MEDSECURE</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+                <div class="navbar-nav m-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">Scope</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <div class="">
+        <img class="header-img" src="img/about.jpeg" style="width: 100%;"/>
+        <div class="mx-auto" style="max-width: 600px;"></div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 pb-4 pb-lg-0">
+                    <img class="img-fluid w-100" src="img/breast.png" alt="">
+                   
+                </div>
+                <div class="col-lg-7">
+                    <h6 class="text-primary text-uppercase font-weight-bold">Breast Cancer</h6>
+                    <h1 class="mb-4">Get To Know About Breast Cancer</h1>
+                    <p class="mb-4">Breast cancer is a frequently occurring malignancy that originates in the breast's tissues. It can affect both women and, though less commonly, men. This cancer often begins in the milk ducts or lobules and may manifest as a lump or other changes in the breast. Early detection through self-exams and medical screenings is pivotal for timely and effective treatment, contributing to improved survival rates. </p>
+                    <div class="container-fluid py-5">
+                        <!-- Your existing HTML content -->
+                        <div class="d-flex align-items-center pt-2">
+                            <button type="button" class="btn-play" data-toggle="modal"
+                                data-video-id="KyeiZJrWrys" data-target="#videoModal">
+                                <span></span>
+                            </button>
+                            <h5 class="font-weight-bold m-0 ml-4">Play Video</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Video Modal -->
+        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <!-- 16:9 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <div id="video"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var player;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('video', {
+                height: '360',
+                width: '640',
+                videoId: '',
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            // The player is ready, you can now use its methods
+        }
+
+        $(document).ready(function () {
+            $('.btn-play').click(function () {
+                var videoId = $(this).data("video-id");
+
+                if (player) {
+                    player.cueVideoById(videoId);
+                }
+            });
+        });
+    </script>
+
+
+    <!-- About End -->
+
+      <!-- About Start -->
+      <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h6 class="text-primary text-uppercase font-weight-bold">Hybrid Access Control</h6>
+                    <h1 class="mb-4">Get To Know About Access Control</h1>
+                    <p class="mb-4">The RBAC-ABAC-MFA framework redefines access control with enhanced granularity and adaptability, outperforming traditional Role-Based Access Control (RBAC). It incorporates user attributes like role, department, location, and time for heightened security and flexibility. Furthermore, the system bolsters security through multi-factor authentication (MFA), employing diverse authentication methods to deter unauthorized access. Moreover, it extends these advantages to file sharing authorization, using user attributes to restrict access to specific files and resources, thus fortifying data security and reducing the risk of breaches. This holistic approach strikes a harmonious balance between security and efficiency, making it particularly valuable in healthcare settings and beyond by facilitating swift, controlled access to sensitive information while preserving patient privacy.</p>
+                    <div class="d-flex align-items-center pt-2">
+                        <button type="button" class="btn-play" data-toggle="modal"
+                            data-src="https://www.youtube.com/watch?v=KyeiZJrWrys" data-target="#videoModal">
+                            <span></span>
+                        </button>
+                        <h5 class="font-weight-bold m-0 ml-4">Play Video</h5>
+                    </div>
+                </div>
+                <div class="col-lg-5 pb-4 pb-lg-0">
+                    <img class="img-fluid w-100" src="img/access.webp" alt="">
+                   
+                </div>
+            </div>
+        </div>
+        <!-- Video Modal -->
+        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>        
+                        <!-- 16:9 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+      <!-- About Start -->
+      <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 pb-4 pb-lg-0">
+                    <img class="img-fluid w-100" src="img/block.jpg" alt="">
+                
+                </div>
+                <div class="col-lg-7">
+                    <h6 class="text-primary text-uppercase font-weight-bold">Blockchain</h6>
+                    <h1 class="mb-4">Get To Know About Blockchain</h1>
+                    <p class="mb-4">Traditional healthcare systems have difficulties such as limited patient access to medical records, poor communication, and low patient participation, which may negatively impact patients' health. The decentralized digital ledger blockchain can solve these problems by providing secure and transparent transactions, efficient healthcare provider-patient communication, and safeguards medical records. Automating appointment scheduling, prescription reminders, and test results with smart contracts improves patients' user experience and medical information control. Through utilizing the system, healthcare practitioners can provide more efficient and effective care by revolutionizing healthcare operations by increasing the satisfaction of patients, access to superior care, and reducing costs.</p>
+                    <div class="d-flex align-items-center pt-2">
+                        <button type="button" class="btn-play" data-toggle="modal"
+                            data-src="https://www.youtube.com/watch?v=KyeiZJrWrys" data-target="#videoModal">
+                            <span></span>
+                        </button>
+                        <h5 class="font-weight-bold m-0 ml-4">Play Video</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Video Modal -->
+        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>        
+                        <!-- 16:9 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+      <!-- About Start -->
+      <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h6 class="text-primary text-uppercase font-weight-bold">Hybrid intrusion prevention and detection system</h6>
+                    <h1 class="mb-4">Get To Know About Hybrid intrusion prevention and detection system</h1>
+                    <p class="mb-4">The Hybrid Intrusion Prevention System (HIPS) represents an innovative and comprehensive cybersecurity solution poised to fortify networked environments against a diverse and evolving array of cyber threats. At its core, the HIPS combines the prowess of an advanced anomaly-based Intrusion Detection System (IDS) with a highly intuitive Graphical User Interface (GUI) tailored for the configuration and management of Snort, a renowned open-source intrusion detection and prevention tool. And, two types of IDS based on the approach are rule-based and anomaly-based. The rule-based approach is act as a filter that work for a given rules and etc. In contrast, the anomaly-based approach establishes a baseline of normal patterns and can detect previously unseen attacks. Although this approach may result in higher false alarm rates, when used alongside rule base detection, it can provide a potent defense mechanism</p>
+                    <div class="d-flex align-items-center pt-2">
+                        <button type="button" class="btn-play" data-toggle="modal"
+                            data-src="https://www.youtube.com/watch?v=KyeiZJrWrys" data-target="#videoModal">
+                            <span></span>
+                        </button>
+                        <h5 class="font-weight-bold m-0 ml-4">Play Video</h5>
+                    </div>
+                </div>
+                <div class="col-lg-5 pb-4 pb-lg-0">
+                    <img class="img-fluid w-100" src="img/network.webp" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- Video Modal -->
+        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>        
+                        <!-- 16:9 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+
+    <!-- Pricing Plan Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <h6 class="text-primary text-uppercase font-weight-bold">Pricing Plan</h6>
+                <h1 class="mb-4">Affordable Pricing Packages</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <div class="bg-secondary">
+                        <div class="text-center p-4">
+                            <h1 class="display-4 mb-0">
+                                <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;"></small>Free
+                            </h1>
+                        </div>
+                        <div class="bg-primary text-center p-4">
+                            <h3 class="m-0">Basic</h3>
+                        </div>
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <p>Live Dashboard</p>
+                            <p>Real time notifications</p>
+                            <p>Breast Cancer Detection</p>
+                            <p>Web Application</p>
+                            <a href="" class="btn btn-primary py-2 px-4 my-2">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="bg-secondary">
+                        <div class="text-center p-4">
+                            <h1 class="display-4 mb-0">
+                                <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;">$</small>40<small class="align-bottom text-muted font-weight-medium" style="font-size: 16px; line-height: 40px;">/Mo</small>
+                            </h1>
+                        </div>
+                        <div class="bg-primary text-center p-4">
+                            <h3 class="m-0">Enterprise</h3>
+                        </div>
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <p>Advanced Reporting</p>
+                            <p>Less Time prediction</p>
+                            <p>ITSM & SIEM Intergrations</p>
+                            <p>Web Application</p>
+                            <a href="" class="btn btn-primary py-2 px-4 my-2">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="bg-secondary">
+                        <div class="text-center p-4">
+                            <h1 class="display-4 mb-0">
+                                <small class="align-top text-muted font-weight-medium" style="font-size: 22px; line-height: 45px;">$</small>145<small class="align-bottom text-muted font-weight-medium" style="font-size: 16px; line-height: 40px;">/Mo</small>
+                            </h1>
+                        </div>
+                        <div class="bg-primary text-center p-4">
+                            <h3 class="m-0">Premium</h3>
+                        </div>
+                        <div class="d-flex flex-column align-items-center py-4">
+                            <p>Advanced Reporting</p>
+                            <p>Less Time prediction</p>
+                            <p>Mobile Application</p>
+                            <p>Bio metrics Authentications</p>
+                            <a href="" class="btn btn-primary py-2 px-4 my-2">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pricing Plan End -->
+
+
+    
+
+    
+
+
+  
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
